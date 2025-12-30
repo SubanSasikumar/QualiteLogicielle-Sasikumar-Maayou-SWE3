@@ -24,7 +24,7 @@ export class HomePage {
   }
 
   async goto() {
-    console.log('‼️ Veuiller cliquer sur le bouton resume (F8) sur Playwright Inspector ‼️')
+    console.log('‼️  Veuiller cliquer sur le bouton resume (F8) sur Playwright Inspector ‼️')
     await this.page.goto('https://www.decathlon.fr')
     await this.acceptCookiesIfPresent()
   }
