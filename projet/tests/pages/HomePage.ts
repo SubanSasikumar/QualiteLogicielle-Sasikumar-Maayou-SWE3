@@ -9,8 +9,6 @@ export class HomePage {
   readonly connect : Locator
   readonly question : Locator
   
-
-
   constructor(page: Page) {
     this.page = page
     this.acceptCookiesButton = page.locator('button:has-text("Tout accepter")')
@@ -26,6 +24,7 @@ export class HomePage {
   }
 
   async goto() {
+    console.log('‼️ Veuiller cliquer sur le bouton resume (F8) sur Playwright Inspector ‼️')
     await this.page.goto('https://www.decathlon.fr')
     await this.acceptCookiesIfPresent()
   }
@@ -33,7 +32,7 @@ export class HomePage {
   async acceptCookiesIfPresent() {
     if (await this.acceptCookiesButton.isVisible({ timeout: 3000 }).catch(() => false)) {
       await this.acceptCookiesButton.click()
-      console.log('Cookie Page Accepté')
+      console.log('   Cookie Page Accepté')
     }
   }
 
