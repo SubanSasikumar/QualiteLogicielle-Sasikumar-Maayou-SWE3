@@ -9,8 +9,8 @@ Feature: Fiche Produit
     
     Scenario: Sélectionner une taille
         Given je suis sur la fiche d’un produit
-        When je sélectionne la taille "M"
-        Then la taille "M" est sélectionnée
+        When je sélectionne la taille "XS"
+        Then la taille "XS" est sélectionnée
     
     Scenario: Accéder aux avis du produit
         Given je suis sur la fiche d’un produit
