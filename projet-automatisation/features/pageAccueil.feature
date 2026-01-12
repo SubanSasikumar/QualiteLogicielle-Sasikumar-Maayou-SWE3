@@ -6,6 +6,5 @@ Feature: Page d’accueil Decathlon
         And l’icône panier est affichée
         And l’icône connecter est affichée
         And l’icône question est affichée
-https://www.decathlon.fr/help/app/home
     
     

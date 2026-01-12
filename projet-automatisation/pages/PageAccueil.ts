@@ -1,6 +1,6 @@
 import { Page, Locator } from '@playwright/test'
 
-export class HomePage {
+export class pageAccueil {
   readonly page: Page
   readonly acceptCookiesButton: Locator
   readonly logo: Locator
@@ -24,7 +24,6 @@ export class HomePage {
   }
 
   async goto() {
-    console.log('‼️  Veuiller cliquer sur le bouton resume (F8) sur Playwright Inspector ‼️')
     await this.page.goto('https://www.decathlon.fr')
     await this.acceptCookiesIfPresent()
   }
