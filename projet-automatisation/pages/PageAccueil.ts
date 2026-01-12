@@ -24,14 +24,18 @@ export class pageAccueil {
   }
 
   async goto() {
-    await this.page.goto('https://www.decathlon.fr')
+    await this.page.goto('https://www.decathlon.fr', { waitUntil: 'domcontentloaded'})
     await this.acceptCookiesIfPresent()
   }
 
   async acceptCookiesIfPresent() {
-    if (await this.acceptCookiesButton.isVisible({ timeout: 3000 }).catch(() => false)) {
+    try {
+      await this.acceptCookiesButton.waitFor({ timeout: 10000 })
       await this.acceptCookiesButton.click()
       console.log('   Cookie Page Accepté')
+       
+    } catch {
+      console.log('   Impoosible Accepté les Cookies Page')
     }
   }
 
