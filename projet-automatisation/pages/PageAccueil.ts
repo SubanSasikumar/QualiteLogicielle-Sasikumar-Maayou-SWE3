@@ -31,9 +31,7 @@ export class pageAccueil {
   async acceptCookiesIfPresent() {
     try {
       await this.acceptCookiesButton.waitFor({ timeout: 10000 })
-      await this.acceptCookiesButton.click()
-      console.log('   Cookie Page Accepté')
-       
+      await this.acceptCookiesButton.click()       
     } catch {
       console.log('   Impoosible Accepté les Cookies Page')
     }
