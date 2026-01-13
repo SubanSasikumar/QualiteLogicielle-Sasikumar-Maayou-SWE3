@@ -6,7 +6,6 @@ export class ProductPage {
   readonly panier: Locator
   readonly comboBox: Locator
   readonly listBox: Locator
-  readonly XS: Locator
   readonly avis: Locator
   readonly note: Locator
   readonly cartCount: Locator
@@ -19,7 +18,6 @@ export class ProductPage {
 
     this.comboBox = page.getByRole('combobox', {name: 'Sélectionnez une taille'})
     this.listBox = page.getByRole('listbox', {name: 'Sélectionnez une taille'})
-    this.XS = this.listBox.getByRole('option', {name: /Taille XS.*En stock/i})
 
     this.avis = page.getByRole('link', { name: 'Voir tous les commentaires' }).first()
     this.note = page.getByRole('heading').filter({ hasText: '/5' })
@@ -31,12 +29,11 @@ export class ProductPage {
     await this.images.click()
   }         
 
-  async selectSize(size: 'XS' | 'M') {
+  async selectSize(size: string) {
     await expect(this.comboBox).toBeVisible()
     await this.comboBox.click()
     await expect(this.listBox).toBeVisible()
-    await expect(this.XS).toBeVisible()
-    await this.XS.click()
+    await this.listBox.getByText(size).first().click();
   }
 
   async openReviews() {
