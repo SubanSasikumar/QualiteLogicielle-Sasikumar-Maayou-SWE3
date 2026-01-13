@@ -6,8 +6,10 @@ setDefaultTimeout(30_000)
 let browser: Browser;
 
 // Hook exécuté avant chaque scénario
-Before(async function () {
-    console.log("   \nDémarage du naviguateur chrominium...");
+Before(async function (scenario) {
+    console.log("\n---------------------------------------------------------------------------------");
+    console.log("▶️  TEST : " + scenario.pickle.name);
+    console.log("---------------------------------------------------------------------------------");
     browser = await chromium.launch({
         headless: false, // ← Mode headed
         //slowMo: 5000 // Optionnel : ralentit les actions pour mieux voir
