@@ -1,3 +1,5 @@
+@etatPanier
+
 Feature: Verifier le contenu d'uun Panier
 
     Scenario: Accéder et vérifier le panier

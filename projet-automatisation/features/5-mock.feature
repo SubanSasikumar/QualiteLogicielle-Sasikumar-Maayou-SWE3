@@ -1,3 +1,5 @@
+@mock
+
 Feature: Mock
 
   Scenario: Mock - Ajout d'un element au panier

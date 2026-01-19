@@ -1,3 +1,5 @@
+@naviguation
+
 Feature: Naviguer avec le Menu
     Scenario: Rechercher un sport depuis le menu Sports
         Given je suis sur la page d’accueil Decathlon

@@ -1,3 +1,5 @@
+@ficheProduit
+
 Feature: Fiche Produit   
     Scenario: Vérifier l'etat du bouton Ajouter au panier 
         Given je suis sur la page d’accueil Decathlon

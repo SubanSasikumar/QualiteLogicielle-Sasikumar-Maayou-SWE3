@@ -2,7 +2,14 @@
   "name": "projet-automatisation",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "pageAccueil": "npx cucumber-js --tags @pageAccueil",
+    "recherche": "npx cucumber-js --tags @recherche",
+    "naviguation": "npx cucumber-js --tags @naviguation",
+    "ficheProduit": "npx cucumber-js --tags @ficheProduit",
+    "etatPanier": "npx cucumber-js --tags @etatPanier", 
+    "mock": "npx cucumber-js --tags @mock"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
