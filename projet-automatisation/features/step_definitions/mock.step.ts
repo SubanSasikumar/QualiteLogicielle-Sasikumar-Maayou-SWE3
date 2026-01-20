@@ -143,7 +143,6 @@ Given('ajoute via un mock deux elements au panier', async function () {
     });
 
     await this.page.goto('https://www.decathlon.fr/checkout/cart');    
-    await this.page.pause()
 });
 
 Then('je vois que le panier possede le bon prix total', async function () {
