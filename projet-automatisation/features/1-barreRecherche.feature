@@ -15,16 +15,16 @@ Feature: Recherche globale
         When je recherche "5404884" dans la barre de recherche
         Then je vois article "Sous-maillot de basket NBA" associe a cette reference
 
-    Scenario: Rechercher un produit via une suggestion
-        Given je suis sur la page d’accueil Decathlon
-        When je commence la recherche "badmi" dans la barre de recherche
-        Then des suggestions de recherches sont affichées
-        When je clique sur la suggestion "Raquettes | Badminton"
-        Then des résultats pour la sugestion "Raquettes de Badminton" sont affichés
-
     Scenario: Verifier la fenetre des resulats des sugestions   
         Given je suis sur la page d’accueil Decathlon
         When je commence la recherche "mail" dans la barre de recherche
         Then les Suggestions de recherche sont visible
         And les Suggestions contiennent les caracteres "mail"
         And la section Meilleures ventes est visible
+
+    Scenario: Rechercher un produit via une suggestion
+        Given je suis sur la page d’accueil Decathlon
+        When je commence la recherche "badmi" dans la barre de recherche
+        Then des suggestions de recherches sont affichées
+        When je clique sur la suggestion "Raquettes | Badminton"
+        Then des résultats pour la sugestion "Raquettes de Badminton" sont affichés
