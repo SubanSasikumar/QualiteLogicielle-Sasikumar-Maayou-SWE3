@@ -2,7 +2,7 @@ import { Page, Locator } from '@playwright/test'
 
 export class pageAccueil {
   readonly page: Page
-  readonly acceptCookiesButton: Locator
+  readonly refuseCookiesButton: Locator
   readonly logo: Locator
   readonly searchBar: Locator
   readonly panier : Locator
@@ -11,7 +11,7 @@ export class pageAccueil {
   
   constructor(page: Page) {
     this.page = page
-    this.acceptCookiesButton = page.locator('button:has-text("Tout accepter")')
+    this.refuseCookiesButton = page.getByRole('button', { name: 'Tout refuser et fermer' })
 
     this.logo = page.locator('.vtmn-navbar_logo')
     
@@ -25,15 +25,15 @@ export class pageAccueil {
 
   async goto() {
     await this.page.goto('https://www.decathlon.fr', { waitUntil: 'domcontentloaded'})
-    await this.acceptCookiesIfPresent()
+    await this.refuseCookiesIfPresent()
   }
 
-  async acceptCookiesIfPresent() {
+  async refuseCookiesIfPresent() {
     try {
-      await this.acceptCookiesButton.waitFor({ timeout: 10000 })
-      await this.acceptCookiesButton.click()       
+      await this.refuseCookiesButton.waitFor({ timeout: 10000 })
+      await this.refuseCookiesButton.click()       
     } catch {
-      console.log('   Impoosible Accepté les Cookies Page')
+      console.log('   Impoosible de refuser les Cookies Page')
     }
   }
 
