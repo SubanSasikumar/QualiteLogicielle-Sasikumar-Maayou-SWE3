@@ -20,4 +20,14 @@ export class barreRecherche {
   async clear() {
     await this.clearButton.click()
   }
+
+  async startSearch(text: string) {
+      await this.input.click()
+      await this.input.fill(text)
+  }
+
+  async clickSugestion(texte: string) {
+    await this.page.getByRole('link', { name: texte }).click()
+  }
+
 }
