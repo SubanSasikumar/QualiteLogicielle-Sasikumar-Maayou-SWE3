@@ -31,7 +31,7 @@ When('j’ajoute le produit au panier', async function () {
 });
 
 Then('le panier contient {int} article', async function (quantite: number) {
-    await expect(this.page.locator('header').filter({ hasText: 'Ajouté au panier !' })).toBeVisible()
+    await expect(this.page.getByRole('alert')).toBeVisible()
 });
 
 /* Scenario 2*/
